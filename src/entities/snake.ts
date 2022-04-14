@@ -64,8 +64,8 @@ class Snake extends Actor {
     // Yes I understand this could be a switch but for some reason it doesn't want to read logical operators
     // So I have to do it this way unless I want to write two switch statements
     if (
-      engine.input.keyboard._keysDown === Input.Keys.W ||
-      engine.input.keyboard._keysDown === Input.Keys.Up
+      engine.input.keyboard._keysDown == Input.Keys.W ||
+      engine.input.keyboard._keysDown == Input.Keys.Up
     ) {
       if (this.started === false) {
         this.started = true;
@@ -78,8 +78,8 @@ class Snake extends Actor {
     }
 
     if (
-      engine.input.keyboard._keysDown === Input.Keys.A ||
-      engine.input.keyboard._keysDown === Input.Keys.Left
+      engine.input.keyboard._keysDown == Input.Keys.A ||
+      engine.input.keyboard._keysDown == Input.Keys.Left
     ) {
       if (this.started === false) {
         this.started = true;
@@ -92,8 +92,8 @@ class Snake extends Actor {
     }
 
     if (
-      engine.input.keyboard._keysDown === Input.Keys.D ||
-      engine.input.keyboard._keysDown === Input.Keys.Right
+      engine.input.keyboard._keysDown == Input.Keys.D ||
+      engine.input.keyboard._keysDown == Input.Keys.Right
     ) {
       if (this.started === false) {
         this.started = true;
@@ -106,8 +106,8 @@ class Snake extends Actor {
     }
 
     if (
-      engine.input.keyboard._keysDown === Input.Keys.S ||
-      engine.input.keyboard._keysDown === Input.Keys.Down
+      engine.input.keyboard._keysDown == Input.Keys.S ||
+      engine.input.keyboard._keysDown == Input.Keys.Down
     ) {
       if (this.started === false) {
         this.started = true;
