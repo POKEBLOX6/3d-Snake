@@ -1,12 +1,13 @@
-import { Engine } from 'excalibur'
-import { Snake } from './entities/snake';
+import { Engine } from "excalibur";
+import { Snake } from "./entities/snake";
+import { Map } from "./game";
 const game = new Engine({
   width: 800,
-  height: 600,
+  height: 600
 });
 // Start the engine to begin the game.
-game.start()
+game.start();
 
 const head = new Snake();
-
-export { game as game}
+const map = new Map();
+export { game };
