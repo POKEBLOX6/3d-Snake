@@ -3,14 +3,17 @@ import { game } from "./index";
 
 class Map {
   constructor() {
+    //@ts-ignore
     const wall = new Actor({
-      name: "wall",
       y: game.drawHeight / 2,
+      x: 0,
       width: 40,
       height: game.drawHeight,
+      collisionType: CollisionType.Fixed,
+      name: "wall",
       color: Color.Chartreuse
     });
-    wall.body.collisionType = CollisionType.Fixed;
+    // wall.body.collisionType = CollisionType.Fixed;
     game.add(wall);
   }
 }

@@ -1,4 +1,11 @@
-import { Actor, Color, Input, Timer, CollisionType } from "excalibur";
+import {
+  Actor,
+  Color,
+  Input,
+  Timer,
+  CollisionType,
+  PostCollisionEvent
+} from "excalibur";
 import { game } from "../index";
 
 class Snake extends Actor {
@@ -16,11 +23,12 @@ class Snake extends Actor {
     super({
       x: game.drawWidth / 2,
       y: game.drawHeight / 2,
+      collisionType: CollisionType.Passive,
       width: 20,
       height: 20,
       color: Color.Green
     });
-    this.body.collisionType = CollisionType.Passive;
+    // this.collisionType = CollisionType.Passive;
 
     game.add(this);
     this.currentDir = "Up";
@@ -56,7 +64,7 @@ class Snake extends Actor {
     }
   }
 
-  public update(engine) {
+  private update(engine) {
     // Check if the game has started and if so start the loop for movement
     if (this.started) {
       this.timer.unpause();
@@ -120,8 +128,12 @@ class Snake extends Actor {
     }
   }
 
-  public PreCollision(ev) {
-    console.log("a");
+  private onInitialize(engine) {
+    this.on("postcollision", (evt) => this.onPostCollision(evt));
+  }
+
+  private onPostCollision(evt: PostCollisionEvent) {
+    console.log(evt.other);
   }
 }
 
